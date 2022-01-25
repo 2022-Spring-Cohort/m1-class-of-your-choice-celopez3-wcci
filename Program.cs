@@ -8,12 +8,28 @@ namespace template_csharp_class_of_your_choice
         static List<Festival> Festivals = new List<Festival>();
         static void Main(string[] args)
         {
-            for(int j = 0; j < 3; j++)
+            bool isRunning = true;
+            while (isRunning)
             {
-                Festivals.Add(CreateFestival());
+                Console.WriteLine("1. Add a Festival");
+                Console.WriteLine("2. View All Festivals");
+                Console.WriteLine("3. Add Amenities");
+
+                int choice = Convert.ToInt32(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        Festivals.Add(CreateFestival());
+                        break;
+                    case 2:
+                        Print();
+                        break;
+                }
             }
 
-            Print();
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
 
         static void Print()
