@@ -14,5 +14,15 @@ namespace template_csharp_class_of_your_choice
         public List<string> Amenities { get; set; }
 
         public bool IsCamping { get; set; }
+
+        public Festival()
+        {
+            Amenities = new List<string>();
+        }
+
+        public void AddAmenity(string perk)
+        {
+            Amenities.Add(perk);
+        }
     }
 }
