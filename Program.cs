@@ -1,12 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace template_csharp_class_of_your_choice
 {
     class Program
     {
+        static List<Festival> Festivals = new List<Festival>();
         static void Main(string[] args)
         {
-            Festival currentFestival = CreateFestival();
+            for(int j = 0; j < 3; j++)
+            {
+                Festivals.Add(CreateFestival());
+            }
+
+            Print();
+        }
+
+        static void Print()
+        {
+            int i = 1;
+            foreach (Festival fest in Festivals)
+            {
+                Console.WriteLine(i + ". " + fest.Name);
+                i++;
+            }
         }
 
         static Festival CreateFestival()
